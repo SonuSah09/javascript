@@ -13,6 +13,7 @@ let name = "Sonu"
 let age = 18
 let isLoggedIn = false
 let state;
+let income = null
 
                           /* BELOW ARE DATATYPES--*/
 // number => upto 2 to the power 53
@@ -34,4 +35,4 @@ console.log(typeof age); // number
 console.log(typeof name); // string
 console.log(typeof isLoggedIn); // boolean
 console.log(typeof state); // undefined as the value was not assigned
-
+console.log(typeof income); // object 
