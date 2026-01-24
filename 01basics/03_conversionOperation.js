@@ -5,7 +5,7 @@ let isEligible = true
 let isEnrolled = undefined
 let isPassed = null
 let result;
-
+/*
 console.log(typeof score); // number
 console.log(typeof(score2)); // string
 console.log(typeof score3); // string
@@ -21,7 +21,6 @@ console.log(score2InNumber); //33 = converted score2 - "33" from string to numbe
 
 let score3InNumber = Number(score3)
 console.log(score3InNumber); // NaN - this will give NaN means "not a number" but still the typeOff score3InNumber will Number only.
- // NOTE-  if we give any "string which contains other character then number like "sonu" or "45#$" then it will be a NaN
 
 let eligibilityInNumber = Number(isEligible) 
 console.log(eligibilityInNumber); // 1
@@ -42,16 +41,48 @@ console.log(resultInNumber); // NaN
 // undefined => NaN
 //  Null => 0
 
+*/
+
+
                           // Conversion of dataType in Boolean // 
-                          
-let isLoggedIn = "hitesh"
 
-let booleanIsLoggedIn = Boolean(isLoggedIn)
-//  console.log(booleanIsLoggedIn);
+let isLoggedIn1 = 1
+let isLoggedIn2 = 0
+let isLoggedIn3 = "Sonu"
+let isLoggedIn4 = ""
+let isLoggedIn5 = null
+let isLoggedIn6 = undefined
+let isLoggedIn7 = -55
 
-// 1 => true; 0 => false
+let booleanIsLoggedIn1 = Boolean(isLoggedIn1)
+// console.log(booleanIsLoggedIn1); // true
+
+let booleanIsLoggedIn2 = Boolean(isLoggedIn2)
+// console.log(booleanIsLoggedIn2); // false
+
+let booleanIsLoggedIn3 = Boolean(isLoggedIn3)
+// console.log(booleanIsLoggedIn3); // true
+
+let booleanIsLoggedIn4 = Boolean(isLoggedIn4)
+// console.log(booleanIsLoggedIn4); // false
+
+let booleanIsLoggedIn5 = Boolean(isLoggedIn5)
+// console.log(booleanIsLoggedIn5);  // false
+
+let booleanIsLoggedIn6 = Boolean(isLoggedIn6)
+// console.log(booleanIsLoggedIn6); // false
+
+let booleanIsLoggedIn7 = Boolean(isLoggedIn7)
+console.log(booleanIsLoggedIn7); // true
+
+                       // Summary for boolean conversion // 
+
+// 1 => true; 
+// 0 => false
 // "" => false
-// "hitesh" => true
+// "sonu" => true
+// undefined and null  => false
+// any number except 0 => true;
 
 let someNumber = 33
 
