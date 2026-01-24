@@ -73,7 +73,7 @@ let booleanIsLoggedIn6 = Boolean(isLoggedIn6)
 // console.log(booleanIsLoggedIn6); // false
 
 let booleanIsLoggedIn7 = Boolean(isLoggedIn7)
-console.log(booleanIsLoggedIn7); // true
+// console.log(booleanIsLoggedIn7); // true
 
                        // Summary for boolean conversion // 
 
@@ -84,11 +84,29 @@ console.log(booleanIsLoggedIn7); // true
 // undefined and null  => false
 // any number except 0 => true;
 
-let someNumber = 33
+                          // Conversion of dataType in Boolean // 
+
+let someNumber = 56
+let someNumber2 = 5+5
+let isNew = true
+let isNew1 = undefined
+let isNew2 = null
 
 let stringNumber = String(someNumber)
-// console.log(stringNumber);
-// console.log(typeof stringNumber);
+console.log(stringNumber); // 56
+console.log(typeof stringNumber); // string
+
+let stringNumber2 = String(someNumber2)
+console.log(stringNumber2); // 10 
+
+let stringIsNew = String(isNew)
+console.log( stringIsNew); // true and typeOf stringNew will be String
+
+let stringIsNew1 = String(isNew1)
+console.log( stringIsNew1); // undefined and typeOf stringNew will be String
+
+let stringIsNew2 = String(isNew2)
+console.log( stringIsNew2); // null and typeOf stringNew will be String
 
 // *********************** Operations ***********************
 
