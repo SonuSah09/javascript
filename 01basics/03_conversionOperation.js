@@ -84,20 +84,22 @@ let booleanIsLoggedIn7 = Boolean(isLoggedIn7)
 // undefined and null  => false
 // any number except 0 => true;
 
-                          // Conversion of dataType in Boolean // 
+                          // Conversion of dataType in String // 
 
+                         
 let someNumber = 56
-let someNumber2 = 5+5
+let someNumber2 = "5+5"
 let isNew = true
 let isNew1 = undefined
 let isNew2 = null
 
+/* 
 let stringNumber = String(someNumber)
 console.log(stringNumber); // 56
 console.log(typeof stringNumber); // string
 
 let stringNumber2 = String(someNumber2)
-console.log(stringNumber2); // 10 
+console.log(stringNumber2); // 5+5 
 
 let stringIsNew = String(isNew)
 console.log( stringIsNew); // true and typeOf stringNew will be String
@@ -108,36 +110,42 @@ console.log( stringIsNew1); // undefined and typeOf stringNew will be String
 let stringIsNew2 = String(isNew2)
 console.log( stringIsNew2); // null and typeOf stringNew will be String
 
-
+*/
 
 // *********************** Operations ***********************
 
 let value = 3
 let negValue = -value
-// console.log(negValue);
+// console.log(negValue); // -3
 
-// console.log(2+2);
-// console.log(2-2);
-// console.log(2*2);
-// console.log(2**3);
-// console.log(2/3);
-// console.log(2%3);
+// console.log(2+2); // 4
+// console.log(2-2); // 0
+// console.log(2*2); // 4
+// console.log(2**7); // 128 (2^7)
+// console.log(2/3); // 0.6666
+// console.log(15%2); // 1 >> remainder operation
 
-let str1 = "hello"
-let str2 = " hitesh"
+let str1 = "Hello"
+let str2 = " Javascript"
 
 let str3 = str1 + str2
-// console.log(str3);
+let str4 = str1 - str2
+// console.log(str3); // Hello Javascript
+// console.log(str4); // NaN - subtracting strings not allowed
 
-// console.log("1" + 2);
-// console.log(1 + "2");
-// console.log("1" + 2 + 2);
-// console.log(1 + 2 + "2");
+// console.log("1" + 2); // 12 => type of output will be String
+// console.log(1 + "2"); // 12 => type of output will be String
+// console.log(1 + 2); //    3 =>type of output will be Number
+// console.log("1" + 2 + 2); // 122 => first input is string so all the inputs will be treated as string
+// console.log(1 + 2 + "2"); // 32 => first input is a number so first mathematical addition will be done for the Number type inputs until Sting comes in picture.
 
-// console.log( (3 + 4) * 5 % 3);
+// NOTE: in real world, it's advised not to use the above kind of confusing/messy code. Try to use parenthesis as much as possible for better code readabiolity.
 
-// console.log(+true);
-// console.log(+"");
+// console.log( (3 + 4) * 5 % 3);  // 2 
+
+// console.log(true); // true
+// console.log(+true); // 1
+// console.log(+""); // 0
 
 let num1, num2, num3
 
@@ -145,7 +153,8 @@ num1 = num2 = num3 = 2 + 2
 
 let gameCounter = 100
 ++gameCounter;
-// console.log(gameCounter);
+
+ console.log(gameCounter); // 101
 
 // link to study
 // https://tc39.es/ecma262/multipage/abstract-operations.html#sec-type-conversion
