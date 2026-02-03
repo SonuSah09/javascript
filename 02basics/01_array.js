@@ -19,14 +19,25 @@ const myArr2 = new Array(10, 11, 13, 14)
 //    ++++++++  Array methods  ++++++++++
 
 // myArr.push(6)
+// console.log(myArr); //  [ 10, 20, 30, 40, 50, 60, 6 ] => will add element 6 in the last 
+
 // myArr.push(7)
+// console.log(myArr); // [ 10, 20, 30, 40, 50, 60, 6, 7 ] => will add element 7 in the last
+
 // myArr.pop()
+// console.log(myArr); // [ 10, 20, 30, 40, 50, 60, 6 ] => will remove the last element in the Array - here 7 is removed which was added by push(7)
 
 // myArr.unshift(9)
-// myArr.shift()
+// console.log(myArr); // [ 9, 10, 20, 30, 40, 50, 60, 6 ] => will add element in the start of the Array causing shifting of indexes of each element : Recommended not to use
 
-// console.log(myArr.includes(9));
-// console.log(myArr.indexOf(3));
+// myArr.shift()
+// console.log(myArr); // [ 10, 20, 30, 40, 50, 60, 6 ] =>  will remove the element in the start of the Array causing shifting of indexes of each element : Recommended not to use
+
+
+// console.log(myArr.includes(55)); // false
+// console.log(myArr.includes(30)); // true
+// console.log(myArr.indexOf(30)); // 2 
+// console.log(myArr.indexOf(4)); // -1 => if the element is not present in the Array and we try to find the index, it'll give -1 everytime.
 
 // const newArr = myArr.join()
 
