@@ -52,21 +52,26 @@ const myArr2 = new Array(10, 11, 13, 14)
 // console.log(myTodoList); // [ 'Walk', 'Study', 'Shopping' ] => type is object
 // console.log(newTodoList); // Walk,Study,Shopping => type is string
 
-// slice, splice
+// +++  slice AND splice  +++
 
-// console.log("A ", myArr);
+// Slice: returns a copy of the Array from base to limit excluding limit. This does not change/modify the original array
+
+// console.log("A ", myArr); // A [ 10, 20, 30, 40, 50, 60 ] => original array before slice
+
+// const mySlicedArr = myArr.slice(2, 5) // will slice from index 2 till index 4. index 5 will not be included 
+// console.log(mySlicedArr); // [ 30, 40, 50 ]
+// console.log("B ", myArr); // B  [ 10, 20, 30, 40, 50, 60 ] => No change in original Aray after slice 
 
 
+// Splice: returns the removed part of the Array from base to limit including limit index. It changes the original Array
 
-// const myn1 = myArr.slice(1, 3)
+const anotherArray = [4, 5, 9, 11, 15, 18]
+console.log("C ", anotherArray); // C  [ 4, 5, 9, 11, 15, 18 ] => original array before splice
 
-// console.log(myn1);
-// console.log("B ", myArr);
+const mySplicedArr = anotherArray.splice(2, 5)
+console.log(mySplicedArr); // [ 9, 11, 15, 18 ]
+console.log("D" , anotherArray); // D [ 4, 5 ] => original Array modified after Splice
 
-
-// const myn2 = myArr.splice(1, 3)
-// console.log("C ", myArr);
-// console.log(myn2);
 
 /* 
 SUMMARY: 
