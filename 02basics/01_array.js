@@ -6,9 +6,12 @@
          // Array elements cannot be accessed using arbitrary strings but must be accessed using their indexes which starts with 0.
 
 const myArr = [10, 20, 30, 40, 50, 60]
+
 const myTodoList = ["Walk", "Study", "Shopping"]
 
 const myArr2 = new Array(10, 11, 13, 14) 
+
+
 
 // console.log(myArr); // [ 10, 20, 30, 40, 50, 60 ] => will print complete Array
 // console.log(myArr[3]); // 40 => Will print value present at index 3 of the Array
@@ -41,13 +44,19 @@ const myArr2 = new Array(10, 11, 13, 14)
 
 // const newArr = myArr.join()
 
-// console.log(myArr);
-// console.log( newArr);
+// console.log(myArr); // [ 10, 20, 30, 40, 50, 60 ] => original array
+// console.log( newArr); // 10,20,30,40,50,60 => join method will bind and then convert into string
+// console.log(typeof newArr); // string
 
+// const newTodoList = myTodoList.join()
+// console.log(myTodoList); // [ 'Walk', 'Study', 'Shopping' ] => type is object
+// console.log(newTodoList); // Walk,Study,Shopping => type is string
 
 // slice, splice
 
 // console.log("A ", myArr);
+
+
 
 // const myn1 = myArr.slice(1, 3)
 
@@ -58,3 +67,27 @@ const myArr2 = new Array(10, 11, 13, 14)
 // const myn2 = myArr.splice(1, 3)
 // console.log("C ", myArr);
 // console.log(myn2);
+
+/* 
+SUMMARY: 
+1. Array is written in brackets [  ].
+2.Array data type is an object.
+3.Array can contain different data types . i.e string,number,boolean,array etc.
+4. Array is zero based indexing. It starts with zero.
+5. Once changed its original value will also change beacause it is non primitive (refrence) type.
+
+ARRAY METHODs :
+
+1.Push = adds value to last of an array.
+2. Pop = removes last value of an array.
+3. Unshift = adds value at first of an array.
+4.Shift = removes first value of an array.
+5. Includes = checks true or false.
+6. IndexOf = checks the position of value in number form.
+7.Join = binds and then converts the array to string.
+8. Slice(value to remove from,value remove upto but don't include)= returns new array and original value remains unchanged. Use when you need to extract a portion of an array without modifying it.
+9. Splice(value to delete from, number of value to delete) = returns new array with deleted one and original value changed.Use when you need to add, remove, or replace elements within an array.
+
+
+*/
+
