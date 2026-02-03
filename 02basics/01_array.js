@@ -6,17 +6,17 @@
          // Array elements cannot be accessed using arbitrary strings but must be accessed using their indexes which starts with 0.
 
 const myArr = [10, 20, 30, 40, 50, 60]
-const myHeros = ["shaktiman", "naagraj", "Doga"]
+const myTodoList = ["Walk", "Study", "Shopping"]
 
 const myArr2 = new Array(10, 11, 13, 14) 
 
 // console.log(myArr); // [ 10, 20, 30, 40, 50, 60 ] => will print complete Array
 // console.log(myArr[3]); // 40 => Will print value present at index 3 of the Array
-// console.log(myHeros); // [ 'shaktiman', 'naagraj', 'Doga' ]
+// console.log(myTodoList); // [ 'Walk', 'Study', 'Shopping' ]
 
 
 
-// Array methods
+//    ++++++++  Array methods  ++++++++++
 
 // myArr.push(6)
 // myArr.push(7)
