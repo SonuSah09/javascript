@@ -81,7 +81,7 @@ JsUser.greeting = function(){
   console.log("Hello JS user");
 }
 JsUser.greetingTwo = function(){
-    console.log(`Hello JS user, ${this.name}`);
+    console.log(`Hello JS user, ${this.name}`); // this keyword is sed to efer the same object
 }
 
 console.log(JsUser.greeting()); // Hello JS user
