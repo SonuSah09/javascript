@@ -104,7 +104,8 @@ const {courseInstructor: instructor} = course
 
 console.log(instructor); // hitesh
 
-// +++++++++++++ APIs and Json+++++++++++++++
+// +++++++++++++ APIs and Json +++++++++++++++
+//-  Json are same like objects and arrays but unlike array and object, json don't have a name
 
 // -- Json in Object format  : 
 // {
