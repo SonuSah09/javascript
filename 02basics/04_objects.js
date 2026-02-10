@@ -83,7 +83,7 @@ const users = [
 ]
 users[1].email
 
-
+*/
 
 const course = {
     coursename: "js in hindi",
@@ -91,26 +91,37 @@ const course = {
     courseInstructor: "hitesh"
 }
 
-// course.courseInstructor
+// console.log(course.courseInstructor); // hitesh
+
+//                      Destructuring: Syntax - const {keyName} = objectName
+
+const {courseInstructor} = course
+// console.log(courseInstructor); // hitesh => suggested to use this as it makes code more clean
+
+// Aother way is to define the shorter key name. - Syntax: const {keyName: someOthername} = objectName -- for example: 
 
 const {courseInstructor: instructor} = course
 
-// console.log(courseInstructor);
-// console.log(instructor);
+console.log(instructor); // hitesh
 
+// +++++++++++++ APIs and Json+++++++++++++++
+
+// -- Json in Object format  : 
 // {
 //     "name": "hitesh",
 //     "coursename": "js in hindi",
 //     "price": "free"
 // }
 
+/* -- Json in Array format which might contain multiple objects : 
+
 [
     {},
     {},
     {}
 ]
-
 */
+
 
 /* 
 SUMMARY : 
@@ -121,4 +132,18 @@ Object.assign( { }, obj1,obj2 ):
 3. To return keys from object => Object.keys(object name);
 4.To return values from object => Object.values(object name);
 5.To check property of object => Object.hasOwnProperty(key/value name);
+
+Destructuring
+1. To extract value from object => const {keyname} = object name;
+2. To rename keyname for using more times => const {keyname: new name } = object name;
+3. JSON is a collection of key-value pairs just like object and a JSON array is an ordered list of value.
+
+- Object destructuring lets you extract properties from objects into variables in a single, concise statement.
+- Array destructuring works similarly but is based on position.
+- Renaming and default values are supported in destructuring assignments.
+- JSON is the standard format for API data; it's a string representation of an object with strict syntax.
+- APIs often return JSON; use fetch and .json() to retrieve and parse data.
+- Destructuring is essential for handling API responses and is widely used in frameworks like React.
+- Avoid common mistakes by providing defaults, staging destructuring, and being mindful of context.
+
 */
