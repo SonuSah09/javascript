@@ -1,34 +1,73 @@
-
+// - A function is a block of code designed to perform a specific task. It Helps in code reusability and modularity. these are Defined once, can be called multiple times.
+/* 
+- Syntax:- 
+  function greet() {
+      console.log("Hello World");
+  }
+ greet(); -- called here
+*/
 function sayMyName(){
     console.log("H");
     console.log("I");
-    console.log("T");
-    console.log("E");
     console.log("S");
-    console.log("H");
+    console.log("O");
+    console.log("N");
+    console.log("U");
+   
 }
+// sayMyName() // HISONU
+// console.log(sayMyName); // [Function: sayMyName]
+// console.log(sayMyName()); // HISONU
 
-// sayMyName()
 
 function addTwoNumbers(number1, number2){
 
     console.log(number1 + number2);
 }
-addTwoNumbers(1, 11)
+// addTwoNumbers(1, 11) // 12
+// addTwoNumbers(3, "a") // 3a => we did not gave any condition in the function, so it's converting and adding anything which is passed in arguments. 
+// addTwoNumbers("hi", "there") // hithere
+// Note:- when declaring the function, whatever we pass in paranthesis is called parameters and while calling the function, whtever values arte passed is known as arguments.
+// Note----->>> In JavaScript, when a function does not have a return statement, it implicitly returns undefined.
 
-// function addTwoNumbers(number1, number2){
+function addNewNumbers(number1, number2){
 
-//     // let result = number1 + number2
-//     // return result
-//     return number1 + number2
-// }
+    //  let result = number1 + number2
+    //  return result
+    //  console.log("heloo there"); // this will not execute because once you return a function it stops here. no code after return will execute inide the function
+    
+    // NOTE- another wa to save more space-
+    // instead of declaring a variable result and then assigning number1+number2 then return result, we can directlty return as below:
+    return number1 + number2
+ }
 
-const result = addTwoNumbers(3, 5)
+const result = addNewNumbers(3, 5) // storing function output in a new variable only possible, when we are returning the funcion 
 
-// console.log("Result: ", result);
+// console.log("Result: ", result); // Result:  8
+
+function loginUserMessage1(username ){
+    
+    return `${username} just logged in`
+}
+
+// console.log(loginUserMessage1("Sonu")) // Sonu just logged in
+// console.log(loginUserMessage1("")) //   just logged in => as we passed empty string
+// console.log(loginUserMessage1()); // undefined just logged in => because we did not pass anything in arguement. So to avoid this, we can apply ome conditions like te next function;: 
 
 
-function loginUserMessage(username = "sam"){
+function loginUserMessage2(username){
+    if(username === undefined){
+        console.log("PLease enter a username");
+        return // if code enters in this If condition and we use return, the function will not execute further. otherwise the message nside if statement will be displayed still code will execute further. 
+    }
+    return `${username} just logged in`
+}
+
+// console.log(loginUserMessage2("Sonu")) // Sonu just logged in
+// console.log(loginUserMessage2()) // PLease enter a username
+
+// NOTE:- another way to use if condition: widely used-
+function loginUserMessage3(username){
     if(!username){
         console.log("PLease enter a username");
         return
@@ -36,9 +75,17 @@ function loginUserMessage(username = "sam"){
     return `${username} just logged in`
 }
 
-// console.log(loginUserMessage("hitesh"))
-// console.log(loginUserMessage("hitesh"))
+// console.log(loginUserMessage3()) // PLease enter a username
 
+// To avoid the undefined situation, we can also give a default value in parameter of the function so it will always execute atleast with the default value. for example:
+
+function loginUserMessage4(username = "Sam" ){
+    
+    return `${username} just logged in`
+}
+
+// console.log(loginUserMessage4("Sonu")) // Sonu just logged in
+// console.log(loginUserMessage4()) //  Sam just logged in => as we did not pass any arguement, Sam is the default argument from parameter of the function
 
 function calculateCartPrice(val1, val2, ...num1){
     return num1
