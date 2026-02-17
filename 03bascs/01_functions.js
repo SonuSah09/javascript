@@ -77,7 +77,7 @@ function loginUserMessage3(username){
 
 // console.log(loginUserMessage3()) // PLease enter a username
 
-// To avoid the undefined situation, we can also give a default value in parameter of the function so it will always execute atleast with the default value. for example:
+// Note: Dfault Parameter - JavaScript allows setting default values for parameters. so it will always execute atleast with the default value. for example:
 
 function loginUserMessage4(username = "Sam" ){
     
@@ -87,26 +87,66 @@ function loginUserMessage4(username = "Sam" ){
 // console.log(loginUserMessage4("Sonu")) // Sonu just logged in
 // console.log(loginUserMessage4()) //  Sam just logged in => as we did not pass any arguement, Sam is the default argument from parameter of the function
 
-function calculateCartPrice(val1, val2, ...num1){
+
+function calculateCartPrice1(num1){
     return num1
 }
 
-// console.log(calculateCartPrice(200, 400, 500, 2000))
+// console.log(calculateCartPrice1(25)) // 25
 
-const user = {
-    username: "hitesh",
-    prices: 199
+
+function calculateCartPrice2(num2){
+    return num2
 }
+
+// console.log(calculateCartPrice2(200, 400, 500)) // 200 => only first value will be pronted because only one parameter was given while declaring the function.
+
+/* **Rest Operator - If mutiple arguments is passed, so to get all the arguments we use Rest operator while declaring the function. 
+Syntax: function newFun(...value1){
+return value1                
+} 
+Note: it will give output an Array of the arguments passed */
+
+function calculateCartPrice3(...num3){
+    return num3
+}
+
+// console.log(calculateCartPrice3(200, 400, 500, 2000)) // [200, 400, 500, 2000]
+
+function calculateCartPrice4(val1, val2, ...num4){
+    return num4
+}
+
+// console.log(calculateCartPrice4(5, 25, 55, 5500, 666)) // [55, 5500, 666] => 5 and 25 will be treated as val1 and val2 and since we are returning only num4, the rest operator will work for the all other arguments except 1st and 2nd.
+
+
+/*                                 +++++++++++++  Handelig objects in function  +++++++++++++                  */
+
+//create an Object: 
+const user = {
+    username: "David",
+    price: 299
+}
+
+// now create a function: 
 
 function handleObject(anyobject){
     console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
 }
 
-// handleObject(user)
+//Now Return the function by giving the object name in the argument: 
+
+handleObject(user) // Username is David and price is 299
+
+
+// Note: sometime if the key's inside the objects are changed then we need to modify the function as well. so to avoid this, we can directly pass the keys inside the argument while returning the function: 
+
 handleObject({
     username: "sam",
     price: 399
-})
+}) // Username is sam and price is 399
+
+/*                                 +++++++++++++  Handelig Arrays in function  +++++++++++++                  */
 
 const myNewArray = [200, 400, 100, 600]
 
@@ -114,8 +154,8 @@ function returnSecondValue(getArray){
     return getArray[1]
 }
 
-// console.log(returnSecondValue(myNewArray));
-console.log(returnSecondValue([200, 400, 500, 1000]));
+console.log(returnSecondValue(myNewArray)); // 400
+console.log(returnSecondValue([200, 400, 500, 1000])); // 400
 
 
 /*
@@ -132,22 +172,22 @@ console.log(returnSecondValue([200, 400, 500, 1000]));
 
 ### 2. Function Declaration
 - Syntax:
-  ```javascript
+
   function greet() {
       console.log("Hello World");
   }
-  ```
+ 
 - Called using `greet();`.
 
 ### 3. Parameters vs Arguments
 - **Parameters**: Variables listed inside the function definition.
 - **Arguments**: Actual values passed when calling the function.
-  ```javascript
+  
   function add(a, b) {
       return a + b;
   }
   console.log(add(5, 10)); // 15
-  ```
+  
 
 ### 4. Return Statement
 - Functions can return values using `return`.
@@ -155,21 +195,21 @@ console.log(returnSecondValue([200, 400, 500, 1000]));
 
 ### 5. Default Parameters
 - JavaScript allows setting default values for parameters.
-  ```javascript
+  
   function multiply(a, b = 2) {
       return a * b;
   }
   console.log(multiply(5)); // 10
-  ```
+  
 
 ### 6. Function Expressions
 - Functions can be stored in variables.
-  ```javascript
+ 
   const greet = function() {
       console.log("Hello!");
   };
   greet();
-  ```
+  
 
 ### 7. Arrow Functions (Intro)
 - Shorter syntax for writing functions.
@@ -193,7 +233,5 @@ Functions are the **building blocks of JavaScript programs**. They:
 - Allow flexibility with parameters and return values
 
 ---
-
-Would you like me to also prepare a **cheat sheet of function types in JavaScript** (declaration, expression, arrow, IIFE, etc.) so you can quickly reference them while coding?
 
 */
