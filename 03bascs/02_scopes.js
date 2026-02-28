@@ -1,61 +1,70 @@
-//var c = 300
+// var c = 600 // should not use as problem with scope of variable will occure.
 let a = 300
+let d = 555
 if (true) {
     let a = 10
     const b = 20
-    // console.log("INNER: ", a);
-    
+    // var c = 999
+    // console.log("INNER: ", a); // INNER:  10
+    // console.log(b); // 20
+    // console.log(d); // 555 => we can access global variable inside a block scope 
+    // console.log(c); // 999
+      
 }
 
 
 
-// console.log(a);
-// console.log(b);
-// console.log(c);
+// console.log("Outer: ", a); // Outer:  300 
+// console.log(b); // this will throw refrence error as we are trying to access variable 'b' outside the if block but it is defined inside the block scope of if block
+// console.log(c); // 999 => even c is defined at both global and block level, still the ouput is from block level. so it is advised to not use var as it causes conflict.
 
 
 function one(){
-    const username = "hitesh"
+    const username = "David"
 
     function two(){
         const website = "youtube"
-        console.log(username);
+        console.log(username); // we can access a variable from parent funcion inside the child function but vice versa not allowed.
     }
-    // console.log(website);
+   // console.log(website); // it will give ReferenceError: website is not defined => we are tryng to access a variable outside the scope of the function where it is defined.
 
-     two()
+     two() // David
 
 }
 
-// one()
+one() // two() => David
+
 
 if (true) {
-    const username = "hitesh"
-    if (username === "hitesh") {
+    const username = "John"
+    if (username === "John") {
         const website = " youtube"
-        // console.log(username + website);
+        console.log(username + website); // John youtube
     }
-    // console.log(website);
+    // console.log(website); // will give ReferenceError: website is not defined as we accessing ouside the scope where it's declared
 }
 
-// console.log(username);
+// console.log(username); // wll give ReferenceError: username is not defined and the reason will be same again.
 
 
-// ++++++++++++++++++ interesting ++++++++++++++++++
+//                                    ++++++++++++++++++ Hoisting in javascript: interesting ++++++++++++++++++
 
 
-console.log(addone(5))
+console.log(addOne(5)) // 6 => it's fine to access the function before declaration. 
 
-function addone(num){
+function addOne(num){
     return num + 1
 }
 
 
 
-addTwo(5)
+// addTwo(5) // it will through ReferenceError: Cannot access 'addTwo' before initialization because we are storing a functioninside a variable and we can't access a variable before initialzing.
 const addTwo = function(num){
     return num + 2
 }
+
+addTwo(5) // now it's fine. no issue will be there
+
 
 
 /*            ++++++++++++++++++  Short Summary  ++++++++++++++++++  
@@ -103,14 +112,14 @@ console.log(f); //This will print 30 => And that is a problem, it shouldn't be a
 - Variables declared outside any function/block are in the **global scope**.
 - Accessible from anywhere in the program.
 - Example:
-  ```js
+
   let name = "Sonu"; // global
 
   function greet() {
     console.log(name); // accessible
   }
   greet();
-  ```
+
 - ⚠️ Risk: Global variables can be accidentally overwritten.
 
 ---
@@ -119,47 +128,47 @@ console.log(f); //This will print 30 => And that is a problem, it shouldn't be a
 - Variables declared inside a function/block are **local** to that function/block.
 - They cannot be accessed outside.
 - Example:
-  ```js
+ 
   function test() {
     let message = "Hello"; // local
     console.log(message);
   }
   test();
   console.log(message); // ❌ Error
-  ```
+  
 
 ---
 
 ### 4. Block Scope (`let` and `const`)
 - Variables declared with `let` or `const` inside `{}` are **block-scoped**.
 - Example:
-  ```js
+  
   if (true) {
     let x = 10;
     const y = 20;
     console.log(x, y); // works
   }
   console.log(x, y); // ❌ Error
-  ```
+ 
 
 ---
 
 ### 5. Function Scope (`var`)
 - `var` is **function-scoped**, not block-scoped.
 - Example:
-  ```js
+  
   if (true) {
     var z = 30;
   }
   console.log(z); // ✅ Accessible
-  ```
+ 
 
 ---
 
 ### 6. Scope Chain
 - JavaScript looks for variables in the **current scope first**, then moves outward (parent scopes).
 - Example:
-  ```js
+
   let a = "global";
 
   function outer() {
@@ -171,7 +180,7 @@ console.log(f); //This will print 30 => And that is a problem, it shouldn't be a
     inner();
   }
   outer();
-  ```
+
 
 ---
 
