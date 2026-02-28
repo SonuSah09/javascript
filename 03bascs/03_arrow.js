@@ -32,7 +32,7 @@ function chai(){
 }
 
 chai()
- 
+
 
 const moreChai = function () {
     let username = "Alex"
@@ -40,30 +40,36 @@ const moreChai = function () {
 }
 
 moreChai() // undefined and the reason is same as we saw in 'chai' function
-*/
-
-/*                                   ++++++++++++++++++   Arrow Function   ++++++++++++++++++                                          
-
-*/
+*/ 
 
 const anotherChai =  () => {
     let username = "Robb"
     console.log(this);
+    console.log(this.username); // undefined
+    
 }
 
 
 anotherChai() // {} => will return the empty object
 
-/*
+
+/*                                   ++++++++++++++++++   Arrow Function   ++++++++++++++++++                                          
+
+Basic Syntex of Arrow function: () => {}
+Also we can use like: const anyVariable = (val1, val2) => { return val1+val2}    
+*/
+
+
+
 // const addTwo = (num1, num2) => {
 //     return num1 + num2
 // }
 
 // const addTwo = (num1, num2) =>  num1 + num2
 
-// const addTwo = (num1, num2) => ( num1 + num2 )
+// const addTwo = (num1, num2) => ( num1 + num2 ) // this way is used widely in react. no need to write return keyword if using this way
 
-const addTwo = (num1, num2) => ({username: "hitesh"})
+const addTwo = (num1, num2) => ({username: "Joel"})
 
 
 console.log(addTwo(3, 4))
@@ -73,4 +79,3 @@ console.log(addTwo(3, 4))
 
 // myArray.forEach()
 
-*/
