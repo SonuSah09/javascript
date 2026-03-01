@@ -59,20 +59,25 @@ Basic Syntex of Arrow function: () => {}
 Also we can use like: const anyVariable = (val1, val2) => { return val1+val2}    
 */
 
+// explicit return: need to write return keyword to return the function. Example:- 
+const addNums = (num1, num2) => {
+    return num1 + num2
+}
+console.log(addNums(3, 4)) // 7
 
+// Also can be written like below 2 ways:
 
-// const addTwo = (num1, num2) => {
-//     return num1 + num2
-// }
+// first way to write- Implisit Return: no need to write return keyword to return the function. Also no curl braces needed. example:-
+const addTwo = (num1, num2) =>  num1 + num2
+console.log(addTwo(6, 4)) // 10
 
-// const addTwo = (num1, num2) =>  num1 + num2
+// seond way to write- 
+const addAgain = (num1, num2) => ( num1 + num2 ) // this way is used widely in react. no need to write return keyword if using this way
+console.log(addAgain(21,18)); // 39
 
-// const addTwo = (num1, num2) => ( num1 + num2 ) // this way is used widely in react. no need to write return keyword if using this way
-
-const addTwo = (num1, num2) => ({username: "Joel"})
-
-
-console.log(addTwo(3, 4))
+// Returning an object: 
+const addMore = (num1, num2) => ({username: "Joel"}) // ==>> must use paranthesis like-  ({Any oject}) to return an object.
+console.log(addMore(8, 2)) // { username: 'Joel' }
 
 
 // const myArray = [2, 5, 3, 7, 8]
