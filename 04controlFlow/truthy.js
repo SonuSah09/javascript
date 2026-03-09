@@ -1,21 +1,39 @@
-const userEmail = []
+const userEmail = "sonu@gmail.com"
 
 if (userEmail) {
-    console.log("Got user email");
+    console.log("Got user email: " + userEmail); // this will be executed because if condition is true
+} else {
+    console.log("Don't have user email");
+}
+const userEmail1 = ""
+
+if (userEmail1) {
+    console.log("Got user email"); 
+} else {
+    console.log("Don't have user email"); // this will be executed because if condition is false hense else executed. reason being is empty string treated as falsy
+}
+const userEmail2 = []
+
+if (userEmail2) {
+    console.log(`Got empty user email Array:  ${userEmail2}`); // this will be executed because if condition is true. reason being is empty Array treated as truthy
 } else {
     console.log("Don't have user email");
 }
 
-// falsy values
+//             ++++++++++++++++++++++++++++++++   NOTES +++++++++++++++++++++++++++++++++++++
+
+// falsy values- below are All the values treated as falsy values
 
 // false, 0, -0, BigInt 0n, "", null, undefined, NaN
 
-//truthy values
+
+//truthy values-  below are some surprising truthy values: 
+
 // "0", 'false', " ", [], {}, function(){}
 
-// if (userEmail.length === 0) {
-//     console.log("Array is empty");
-// }
+ if (userEmail2.length === 0) {
+     console.log("Array is empty");
+ }
 
 const emptyObj = {}
 
@@ -26,21 +44,51 @@ if (Object.keys(emptyObj).length === 0) {
 // Nullish Coalescing Operator (??): null undefined
 
 let val1;
-// val1 = 5 ?? 10
+val1 = 5 ?? 10
+console.log(val1); // 5 ==>> usually picks the first value.
+
+let val2;
+val2 = null ?? 10
+console.log(val2); // 10 ==>> checks if any value is null or undefined, then will pick the other value.
+
+let val3;
+val3 = undefined ?? 15
+console.log(val3); // 15 ==>>  checks if any value is null or undefined, then will pick the other value.
+
+
+let val4;
+val4 = null ?? 20 ?? 15
+console.log(val4); // 20
+
+
+let val5;
+val5 = null ?? undefined 
+console.log(val5); // undefined ==>> first checks the first value if null/undefined then got to  next value and execute it. in this case first was null so second was executes anyway
+
+let val6;
+val6 = undefined ?? null 
+console.log(val6); // null // first checks the first value if null/undefined then got to  next value and execute it. in this case first was null so second was executes anyway
+
+let val7;
+val7 = null ?? undefined ?? 18 ?? 13 
+console.log(val7); // 18
+
+
 // val1 = null ?? 10
 // val1 = undefined ?? 15
-val1 = null ?? 10 ?? 20
+// val1 = null ?? 10 ?? 20
 
+// Important: Terniary Operator
 
-
-console.log(val1);
-
-// Terniary Operator
-
-// condition ? true : false
+// condition ? true : false ==>> if condition is true will execute first, otherwise second: 
 
 const iceTeaPrice = 100
-iceTeaPrice <= 80 ? console.log("less than 80") : console.log("more than 80")
+iceTeaPrice <= 80 ? console.log("less than 80") : console.log("more than 80") // more than 80 
+
+let isLoggedInUser = true
+isLoggedInUser ? console.log("user is logged in") : console.log("user is a guest") // user is logged in
+
+
 
 /* 
 

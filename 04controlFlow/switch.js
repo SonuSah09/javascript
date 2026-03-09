@@ -22,8 +22,17 @@ switch (month) {
     case "april":
         console.log("april");
         break;
+    case "may":
+        console.log("may");
+        break;
 
     default:
         console.log("default case match");
         break;
 }
+
+/* 
+NOTE:   1. if a case gets matched and we don't apply "break;", all the remaining cases will execute until break keyword is added. 
+        2. if no case gets matched, the default will be executed.
+
+*/
