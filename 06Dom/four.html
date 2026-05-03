@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My DOM Learnings </title>
+</head>
+<body style="background-color: #212121; color: #fff">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+    
+</body>
+<script>
+    // Adding : 
+
+    function addLanguage(lang){
+        const myList = document.createElement('li');
+        myList.innerHTML = `${lang}`
+        document.querySelector('.language').appendChild(myList)
+    }
+    addLanguage("Java");
+    addLanguage("Pithon");
+
+    function optimizedAddLang(lang){
+        const myList  = document.createElement('li');
+        myList.appendChild(document.createTextNode(lang));
+        document.querySelector('.language').appendChild(myList)
+    }
+    optimizedAddLang('Ruby')
+    optimizedAddLang('Typescript')
+
+    // Editing :
+
+    const secondLang =  document.querySelector("li:nth-child(2)");
+    // secondLang.innerHTML= "Spring"  // prefer not to use for optimization shake
+    const newList = document.createElement('li');
+    newList.textContent = "Mojo"
+    secondLang.replaceWith(newList)
+
+    // Another way to Edit:
+
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = '<li>Dzango </li> '
+
+
+    // Removing :
+    
+    const lastLangName = document.querySelector('li:last-child');
+    lastLangName.remove()
+
+</script>
+</html>
