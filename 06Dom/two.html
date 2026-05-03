@@ -17,14 +17,26 @@
 </body>
 <script>
     const parent = document.querySelector('.parent')
-   // console.log(parent);
+    parent.style.backgroundColor='orange'
+    parent.style.color='black'
+    parent.style.padding='25px'
+    parent.style.borderRadius='15px'
+    console.log(parent);
+
     console.log(parent.children);
     console.log(parent.children[1].innerHTML);
+    parent.children[0].style.backgroundColor='green'
+    parent.children[1].style.backgroundColor='blue'
+    parent.children[2].style.backgroundColor='yellow'
+    parent.children[3].style.backgroundColor='violet'
+    
 
-    // for (let i = 0; i < parent.children.length; i++) {
-    //      console.log(parent.children[i].innerHTML);
+    for (let i = 0; i < parent.children.length; i++) {
+        parent.children[i].style.padding='15px' ;
+        parent.children[i].style.borderRadius='15px';
+        console.log(parent.children[i].innerHTML);
         
-    // }
+    }
     // parent.children[1].style.color = "orange"
     // console.log(parent.firstElementChild);
     // console.log(parent.lastElementChild);
