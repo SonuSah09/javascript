@@ -38,6 +38,17 @@ if(e.target.id== 'yellow'){
 
 //Note we can simplify without using the if conditions: just add below 1 condition--
 // bgBody.style.backgroundColor=e.target.id
+
+// We can aslo try using switch case: 
+/*
+ switch (e.target.id) {
+     case e.target.id: bgBody.style.backgroundColor = e.target.id
+         break;
+
+     default:
+        break;
+} 
+*/
 })
 })
 
