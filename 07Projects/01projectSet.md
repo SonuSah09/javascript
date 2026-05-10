@@ -87,3 +87,22 @@ if(height=== '' || height < 0 || isNaN(height)){
 })
 
 ```
+
+## project 3 : Digital Clock -- solution code
+
+``` javascript
+/* solution approach:
+first we select the clock using methods like getElementByID or querySelector.
+now we use a method which is used to control events in javascript.it will run the program for the given interval. this is setInterval method :-- syntax
+setInerval (function() {}, 1000) -- 1000 is 1000 millis which means this will execut every second.
+now in the bosy of function written inside this setIntervL METHOD, WE WILL define a date variable and we will convert it into localtime string using date methods.
+*/
+
+const myClock = document.getElementById('clock');
+
+setInterval(function() {
+  let date = new Date();
+  myClock.innerHTML = date.toLocaleTimeString()
+} , 1000) 
+
+```
