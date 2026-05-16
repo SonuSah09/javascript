@@ -106,3 +106,118 @@ setInterval(function() {
 } , 1000) 
 
 ```
+
+## project 4 : Number guessing game -- solution code
+
+``` javascript
+
+// first we will create a random number between 1 to 100
+let randomNumber = parseInt((Math.random()*100)+1)
+// console.log(randomNumber)
+
+// First we will hold all the elements of the game to a variable:
+const submitButton = document.querySelector('#subt'); 
+const userInput = document.querySelector('#guessField'); 
+const previousGuesses = document.querySelector('.guesses'); 
+const GuessRemaining = document.querySelector('.lastResult'); 
+const resultLowOrHigh = document.querySelector('.lowOrHi'); 
+const startOver = document.querySelector('.resultParas'); 
+const paragraph = document.createElement('p');
+
+// now we will create vaiables needed to achieve the goal:
+
+let prevGuesses = [] // to hold tyhe gueeses by user input
+let guessedTotal = 0 // to get the count of user guesses 
+let playGame = true // condition to play the game
+ 
+// Now we will chek if user is available tyo play game:
+if(playGame){
+  submitButton.addEventListener('click', function(e){
+  e.preventDefault();
+  const enteredValue = parseInt(userInput.value)
+ // console.log(enteredValue)
+  validateUserinput(enteredValue)
+  })
+}
+// Now we will write functions to achieve the goal:
+
+// to validate the userInput:
+function validateUserinput(enteredValue){
+   if(enteredValue<=0 ){
+    alert ('Please enter a number greater than 0')
+  }else if(enteredValue>100){
+    alert('Please enter a number less than 100')
+  }else if (isNaN (enteredValue)){
+    alert('Please entera valid number')
+  }else {
+    prevGuesses.push(enteredValue)
+   // console.log(prevGuesses)
+
+    if(guessedTotal === 9){
+      displayGuess(enteredValue)
+      displayResultMessage (`Game Over. The  correct number was ${randomNumber}`)
+      endGame()
+    }else{
+      displayGuess(enteredValue)
+      checkResult(enteredValue)
+    }
+  }
+}
+
+// To compare the userInput with the randomNumber 
+function checkResult(enteredValue){
+  if(enteredValue == randomNumber){
+    displayResultMessage(`Congratsss... You guessed it Right!`)
+    endGame()
+  } else if(enteredValue < randomNumber){
+    displayResultMessage(`Sorry... It's a wrong guess. The number is Tooo Low. Try Again!!`)
+  }else if(enteredValue > randomNumber){
+    displayResultMessage(`Sorry... It's a wrong guess. The number is Tooo High. Try Again!!`)
+  }
+}
+
+// To update the previous guesses and clear the user input field and update the remaining attempts
+function displayGuess(guess){
+  userInput.value =  ''  // it'll clear the input field
+  previousGuesses.innerHTML += `${guess}, ` // to show the prev guessed number 
+  guessedTotal++ // to increase the number of guesses user tried 
+  // console.log(guessedTotal)
+  GuessRemaining.innerHTML = `${10 - guessedTotal}` // to show the number of attempts left
+}
+
+//To prinnt the result 
+function displayResultMessage(message) {
+  resultLowOrHigh.innerHTML =`<h2>${message}</h2>`
+}
+
+// To end the game:
+function endGame(){
+  userInput.value = ''
+  userInput.setAttribute('disabled', '')
+  paragraph.classList.add('button')
+  paragraph.innerHTML = `<h2 id="newGame"> Start New Game </h2>`
+  startOver.appendChild(paragraph)
+  playGame = false
+  newGame()
+}
+
+// To start new game:
+function newGame(){
+  const newGameButton = document.querySelector('#newGame')
+  newGameButton.addEventListener('click' , function(e){
+    randomNumber = parseInt((Math.random()*100)+1)
+    prevGuesses = []
+    guessedTotal = 0
+    previousGuesses.innerHTML = ''
+    GuessRemaining.innerHTML = `${10 - guessedTotal}`
+    userInput.removeAttribute('disabled')
+    startOver.removeChild(paragraph)
+    playGame = true
+  })
+
+}
+
+
+
+
+```
