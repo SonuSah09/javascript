@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Async Functions Tuorial-part 2</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayDate = function(str){
+    console.log(str, "Hi Sonu, it's ", Date.now()); 
+}
+let startInt; // Declare startInt as a global variable 
+
+ document.querySelector('#start').addEventListener('click', function(){
+    if(!startInt) { // Check if startInt is not already set
+     startInt = setInterval(sayDate, 1000, "Greetings-")
+    console.log("INTERVAL STARTED");
+    }
+})
+
+document.querySelector('#stop').addEventListener('click', function(){
+clearInterval(startInt)
+console.log("STOPPED INTERVAL");
+startInt = null; // Reset startInt to allow starting the interval again
+})
+
+</script>
+</html>
