@@ -73,6 +73,7 @@ console.log(password);
 */
 
 //-----------------------------------------  Concept of Async Await ------------------------------------- //
+/*
 
 const promiseFive = new Promise(function(resolve, reject){
     setTimeout(function(){
@@ -96,44 +97,38 @@ async function consumePromiseFive () {
 }
 consumePromiseFive()
 
-// async function consumePromiseFive(){
-//     try {
-//         const response = await promiseFive
-//         console.log(response);
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
-
-// consumePromiseFive()
-
-/*
-// async function getAllUsers(){
-//     try {
-//         const response = await fetch('https://jsonplaceholder.typicode.com/users')
-
-//         const data = await response.json()
-//         console.log(data);
-//     } catch (error) {
-//         console.log("E: ", error);
-//     }
-// }
-
-//getAllUsers()
-
-fetch('https://api.github.com/users/hiteshchoudhary')
-.then((response) => {
-    return response.json()
-})
-.then((data) => {
-    console.log(data);
-})
-.catch((error) => console.log(error))
-
-// promise.all
-// yes this is also available, kuch reading aap b kro.
 
 
-
+async function getMydata() {
+    try {
+        const response = await fetch('https://api.github.com/users/SonuSah09')
+        const responseData = await response.json() // since converting in json also takes time, so we shuld use await otherwise it will be in ending state
+        console.log(responseData);  
+    } catch (error) {
+        console.log("E: ", error);
+    }
+}
+getMydata()
 
 */
+
+// --------------------------------- To Avoid await and try catch and all, we use fetch with .then and .catch ------------------------
+
+
+fetch('https://api.github.com/users/SonuSah09')
+.then((response)=>{
+    return response.json()
+})
+.then((responseData)=>{console.log(responseData);
+})
+.catch((error)=>{console.log(error);
+})
+
+// NOTE: Fetch will be executd first above all the other functions
+
+// promise.all
+// yes this is also available, Complete this as well
+
+
+
+
