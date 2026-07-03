@@ -1,15 +1,23 @@
+/*
+
+
+// creation phase-- 
 const promiseOne = new Promise(function(resolve, reject){
     //Do an async task
     // DB calls, cryptography, network
     setTimeout(function(){
         console.log('Async task is compelete');
-        resolve()
-    }, 1000)
+        resolve() // important to connect promise to then in order to consume the promise
+    }, 2000)
 })
-
+// consumption phase--
 promiseOne.then(function(){
     console.log("Promise consumed");
 })
+
+
+// another way to create Promise (without holding into a variable)
+// let's say this is promiseTwo
 
 new Promise(function(resolve, reject){
     setTimeout(function(){
@@ -21,37 +29,48 @@ new Promise(function(resolve, reject){
     console.log("Async 2 resolved");
 })
 
+
+
 const promiseThree = new Promise(function(resolve, reject){
     setTimeout(function(){
-        resolve({username: "Chai", email: "chai@example.com"})
+        resolve({username: "SONU", Email: "Sonu@123.com"})
     }, 1000)
 })
-
 promiseThree.then(function(user){
-    console.log(user);
+    console.log(user)
+    console.log(user.username);
+    console.log(`Email id for the user is ${user.Email}`);
 })
+
+*/
 
 const promiseFour = new Promise(function(resolve, reject){
     setTimeout(function(){
-        let error = true
+        let error = false
         if (!error) {
-            resolve({username: "hitesh", password: "123"})
+            resolve({Username: "David", Password: "David@123"})
         } else {
-            reject('ERROR: Something went wrong')
+            reject("Error: Something went wrong")
         }
-    }, 1000)
+    },1000)
 })
 
- promiseFour
- .then((user) => {
-    console.log(user);
-    return user.username
-}).then((username) => {
-    console.log(username);
-}).catch(function(error){
+promiseFour
+.then((user)=>{
+    console.log(user.Username);
+    return user.Password // it won't give rhe output so we have to use nested .then as shown below: 
+})
+.then((password)=>{
+console.log(password);
+})
+.catch((error)=>{
     console.log(error);
-}).finally(() => console.log("The promise is either resolved or rejected"))
+})
+.finally(()=>{
+    console.log("The promise is either resolved or rejected");
+})
 
+/*
 
 
 const promiseFive = new Promise(function(resolve, reject){
@@ -100,3 +119,8 @@ fetch('https://api.github.com/users/hiteshchoudhary')
 
 // promise.all
 // yes this is also available, kuch reading aap b kro.
+
+
+
+
+*/
