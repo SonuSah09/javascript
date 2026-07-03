@@ -42,7 +42,7 @@ promiseThree.then(function(user){
     console.log(`Email id for the user is ${user.Email}`);
 })
 
-*/
+
 
 const promiseFour = new Promise(function(resolve, reject){
     setTimeout(function(){
@@ -70,31 +70,44 @@ console.log(password);
     console.log("The promise is either resolved or rejected");
 })
 
-/*
+*/
 
+//-----------------------------------------  Concept of Async Await ------------------------------------- //
 
 const promiseFive = new Promise(function(resolve, reject){
     setTimeout(function(){
-        let error = true
+        let error = false
         if (!error) {
-            resolve({username: "javascript", password: "123"})
+            resolve({username: "javascript", password: "js@123"})
         } else {
             reject('ERROR: JS went wrong')
         }
     }, 1000)
 });
-
-async function consumePromiseFive(){
-    try {
-        const response = await promiseFive
-        console.log(response);
+async function consumePromiseFive () {
+    // to handle error cases, we should use try catch while using async await in promises.
+    try { 
+        const myResponse = await promiseFive
+        console.log(myResponse);  
     } catch (error) {
         console.log(error);
     }
+   
 }
-
 consumePromiseFive()
 
+// async function consumePromiseFive(){
+//     try {
+//         const response = await promiseFive
+//         console.log(response);
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
+
+// consumePromiseFive()
+
+/*
 // async function getAllUsers(){
 //     try {
 //         const response = await fetch('https://jsonplaceholder.typicode.com/users')
