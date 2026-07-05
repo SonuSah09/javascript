@@ -6,7 +6,7 @@ let mychannel = "thisIsMyShow     "
 console.log(myName.length);
 console.log(myName.trueLength); // currently undefined
 
-*/
+
 
 let myHeros = ["thor", "spiderman"]
 
@@ -34,9 +34,10 @@ myHeros.sonu() // will have access to method sonu
 myHeros.heySonu() // will have access to method heySonu
 heroPower.heySonu() // will not have access to method heySonu
 
+*/
 // inheritance
 
-/*
+
 const User = {
     name: "david",
     email: "david@google.com"
@@ -53,13 +54,15 @@ const TeachingSupport = {
 const TASupport = {
     makeAssignment: 'JS assignment',
     fullTime: true,
-    __proto__: TeachingSupport
+    __proto__: TeachingSupport // now TASupport will have all the properties of TeachingSupport
 }
 
-Teacher.__proto__ = User
+Teacher.__proto__ = User // Can also be used outside: now Teacher will have all the properties of User
 
 // modern syntax
-Object.setPrototypeOf(TeachingSupport, Teacher)
+Object.setPrototypeOf(TeachingSupport, Teacher) // TeachingSupport  will have all the properties of Teacher
+
+
 
 let anotherUsername = "John     "
 
@@ -69,7 +72,6 @@ String.prototype.trueLength = function(){
 }
 
 anotherUsername.trueLength()
-"John".trueLength()
-"iceTea".trueLength()
+ "John".trueLength()
+ "iceTea".trueLength()
 
-*/
