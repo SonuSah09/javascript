@@ -1,3 +1,5 @@
+
+
 function multipleBy5(num){
 
     return num*5
@@ -5,9 +7,11 @@ function multipleBy5(num){
 
 multipleBy5.power = 2
 
-console.log(multipleBy5(5));
+console.log(multipleBy5(4));
 console.log(multipleBy5.power);
 console.log(multipleBy5.prototype);
+
+
 
 function createUser(username, score){
     this.username = username
@@ -16,16 +20,22 @@ function createUser(username, score){
 
 createUser.prototype.increment = function(){
     this.score++
+    console.log(`price is increased to ${this.score}`);
+    
 }
 createUser.prototype.printMe = function(){
     console.log(`price is ${this.score}`);
 }
 
+console.log(createUser.prototype); // will show the two prototypes which we created
+
 const myCoffee = new createUser("coffee", 250)
 const myTea = createUser("tea", 25)
 
-myCoffee.printMe()
 
+myCoffee.printMe()
+myCoffee.increment()
+myTea.printMe() // throw error as it's undefined because we have not used "new" keyword due to whioch new object was not created.
 
 /*
 
