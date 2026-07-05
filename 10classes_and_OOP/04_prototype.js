@@ -1,11 +1,14 @@
-// let myName = "Sonu     "
-// let mychannel = "thisIsMyShow     "
+/*
 
-// console.log(myName.trueLength);
+let myName = "Sonu     "
+let mychannel = "thisIsMyShow     "
 
+console.log(myName.length);
+console.log(myName.trueLength); // currently undefined
+
+*/
 
 let myHeros = ["thor", "spiderman"]
-
 
 let heroPower = {
     thor: "hammer",
@@ -16,21 +19,24 @@ let heroPower = {
     }
 }
 
+// Note: we can create a method directly in the Global Object so that every object will have access to that method. example is shown below: 
 Object.prototype.sonu = function(){
     console.log(`Sonu is present in all objects`);
 }
 
+// Note: Now if we create a method only for particular object like Array, then onl Array objects will have the access top the new method not the other objectas like below:
 Array.prototype.heySonu = function(){
     console.log(`Sonu says hello`);
 }
 
-// heroPower.sonu()
-// myHeros.sonu()
-// myHeros.heySonu()
-// heroPower.heySonu()
+heroPower.sonu() // will have access to method sonu
+myHeros.sonu() // will have access to method sonu
+myHeros.heySonu() // will have access to method heySonu
+heroPower.heySonu() // will not have access to method heySonu
 
 // inheritance
 
+/*
 const User = {
     name: "david",
     email: "david@google.com"
@@ -65,3 +71,5 @@ String.prototype.trueLength = function(){
 anotherUsername.trueLength()
 "John".trueLength()
 "iceTea".trueLength()
+
+*/
